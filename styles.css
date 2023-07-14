@@ -24,7 +24,6 @@ a{
 }
 .fa-solid{
   font-size: 2.5rem;
-  /* width: 100%; */
 }
 
 /* NAVIGATION AREA */
@@ -76,9 +75,6 @@ header{
 .toggle-btn{
   cursor: pointer;
   display: none;
-  /* font-size: 2.5rem;
-  width: 2.5rem;
-  height: 2.5rem; */
 }
 .dropdown-menu{
   display: none;
@@ -88,13 +84,8 @@ header{
   right: 0;
   width: 100%;
   overflow: hidden;
-  /* height: 0%; */
-  /* opacity: .8; */
-  /* padding: 3rem 0rem; */
-  /* overflow: hidden; */
 }
 .dropdown-menu.open{
-  /* height: 100%; */
   top: 6.8rem;
   padding: 3rem 0rem;
 }
