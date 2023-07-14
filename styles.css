@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size: 62.5%;
+}
+body{
+  font-family: 'Poppins', sans-serif;
+  max-width: 1440px;
+  line-height: 1.5;
+  color: #000;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #000;
+}
+.fa-solid{
+  font-size: 2.5rem;
+  /* width: 100%; */
+}
+
+/* NAVIGATION AREA */
+header{
+  position: relative;
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5rem;
+}
+.nav ul{
+  display: flex;
+  gap: 3rem;
+}
+.nav ul li{
+  display: inline-block;
+}
+.nav li a:hover, nav li a:active{
+  color: #1AA8AB;
+}
+.cta-reg{
+  display: flex;
+  gap: 3rem;
+}
+.cta-reg a{
+  border: 2px solid;
+  padding: 1.4rem 5rem;
+  outline: none;
+}
+.login{
+  color: #4D3F71;
+  border-color: #4D3F71;
+}
+.login:hover{
+  color: #fff;
+  background: #4D3F71;
+  border-color: #4D3F71;
+}
+.signup{
+  color: #fff;
+  background: #1AA8AB;
+}
+.signup:hover{
+  background: #fff;
+  color: #1AA8AB;
+  border-color: #1AA8AB;
+}
+.toggle-btn{
+  cursor: pointer;
+  display: none;
+  /* font-size: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem; */
+}
+.dropdown-menu{
+  display: none;
+  position: absolute;
+  background: #1AA8AB;
+  top: -100rem;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
+  /* height: 0%; */
+  /* opacity: .8; */
+  /* padding: 3rem 0rem; */
+  /* overflow: hidden; */
+}
+.dropdown-menu.open{
+  /* height: 100%; */
+  top: 6.8rem;
+  padding: 3rem 0rem;
+}
+.dropdown-menu ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+.dropdown-menu ul a{
+  color: #fff;
+}
+.dropdown-menu .cta-reg{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 780px) {
+  .nav, .cta-reg.main{
+    display: none;
+  }
+  .toggle-btn{
+    display: block;
+    font-size: 2.5rem;
+  }
+  .dropdown-menu .cta-reg a{
+    border: 2px solid;
+    padding: .5rem 3rem;
+    outline: none;
+  }
+  .dropdown-menu{
+    display: block;
+  }
+  
+}
