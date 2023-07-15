@@ -29,7 +29,7 @@ a{
 /* NAVIGATION AREA */
 header{
   position: relative;
-  height: 7rem;
+  height: 8.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -106,6 +106,68 @@ header{
   margin-top: 3rem;
 }
 
+
+
+/* SECTION AREA */
+.heroSection{
+  position: relative;
+  height: 85vh;
+  background-color:#E6F0F0;
+  background-image: url(images/bgImg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.cont{
+  width: 100%;
+  height: 100%;
+  padding: 0 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.text-area{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.text-area h1{
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+.text-area p{
+  font-size: 1.8rem;
+  font-weight: 400;
+  word-spacing: 1px;
+}
+.text-area a{
+  background: #1AA8AB;
+  color: #fff;
+  width: fit-content;
+  outline: none;
+  padding: 1.4rem 4.2rem;
+}
+#specialText{
+  height: fit-content;
+  position: relative;
+  z-index: 20;
+  background-size: 10px;
+}
+#specialText::before{
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: #4D3F71;
+  opacity: .9;
+  z-index: 10;
+}
+
+
 /* MEDIA QUERIES */
 @media screen and (max-width: 780px) {
   .nav, .cta-reg.main{
@@ -123,5 +185,4 @@ header{
   .dropdown-menu{
     display: block;
   }
-  
 }
