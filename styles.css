@@ -84,6 +84,7 @@ header{
   right: 0;
   width: 100%;
   overflow: hidden;
+  z-index: 20000;
 }
 .dropdown-menu.open{
   top: 6.8rem;
@@ -151,6 +152,7 @@ header{
 }
 #specialText{
   height: fit-content;
+  width: 100%;
   position: relative;
   z-index: 20;
   background-size: 10px;
