@@ -25,6 +25,10 @@ a{
 .fa-solid{
   font-size: 2.5rem;
 }
+img{
+  width: 100%;
+  height: 100%;
+}
 
 /* NAVIGATION AREA */
 header{
@@ -268,6 +272,77 @@ header{
   font-size: 1.6rem;
   font-weight: 500;
 }
+
+
+/* CONTACT SECTION */
+.contact{
+  background: #FBFBFB;
+  padding: 6rem 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact h2{
+  font-size: 3rem;
+  font-weight: 600;
+}
+.contactDiv{
+  margin-top: 5rem;
+  width: 100%;
+  display: flex;
+  gap: 7rem;
+}
+.contactDiv .imgCtn{
+  width: 100%;
+}
+.form{
+  width: 100%;
+  background: #fff;
+  padding: 4rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border: 1px solid #D3DEE8;
+}
+.formControl{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.topContactDiv{
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+}
+.topContactDiv .formControl{
+  flex: 1;
+}
+.formControl input, .formControl textarea{
+  padding: 1.5rem;
+  border: 1px solid #D3DEE8;
+  outline: none;
+  width: 100%;
+}
+.formControl input:focus, .formControl textarea:focus{
+  outline: none;
+  
+}
+.formControl ::placeholder{
+  font-family: 'Poppins', sans-serif;
+}
+.formSubmit{
+  margin-top: 3.3rem;
+  width: fit-content;
+  padding: 2rem 6rem;
+  font-size: 1.8rem;
+  font-weight: 100;
+  color: #fff;
+  background: #1AA8AB;
+  border: none;
+}
+
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 780px) {
