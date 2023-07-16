@@ -170,6 +170,54 @@ header{
 }
 
 
+/* CAROUSEL SECTION */
+.carousel{
+  width: 100%;
+}
+.carousel .imgCtn{
+  width: 100%;
+  height: 100%;
+}
+.carousel .imgCtn img{
+  height: 100%;
+  width: 100%;
+}
+
+/* PROGRAM SECTION  */
+.program{
+  padding: 6rem 8rem ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.program h2{
+  font-size: 3rem;
+  font-weight: 600;
+}
+.programCtn{
+  display: flex;
+  gap: 6rem;
+  margin-top: 6rem;
+}
+.programCtn .imgCtn{
+  width: 41rem;
+  height: 41rem;
+}
+.programCtn .imgCtn img{
+  height: 100%;
+  width: 100%;
+}
+.programCtn .imgCtn h3{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+
 /* MEDIA QUERIES */
 @media screen and (max-width: 780px) {
   .nav, .cta-reg.main{
