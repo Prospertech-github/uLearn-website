@@ -183,13 +183,16 @@ header{
   width: 100%;
 }
 
+
 /* PROGRAM SECTION  */
 .program{
-  padding: 6rem 8rem ;
+  padding: 6rem 8rem;
+  padding-bottom: 10rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: #FBFBFB;
 }
 .program h2{
   font-size: 3rem;
@@ -209,14 +212,62 @@ header{
   width: 100%;
 }
 .programCtn .imgCtn h3{
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.8rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
+
+/* LEARNING SECTION */
+.learning{
+  background: #E8F2F2;
+  padding: 9rem 8rem;
+}
+.topDiv{
+  display: flex;
+  justify-content: space-between;
+  gap: 10rem;
+}
+.topDiv h2{
+  width: 40%;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+.bottomDiv{
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.bottomDiv .imgCtn{
+  height: 100%;
+  position: relative;
+}
+.bottomDiv .imgCtn img{
+  width: 100%;
+  height: 100%;
+}
+.applyBtn{
+  position: absolute;
+  bottom: 60px;
+  right: 10px;
+  z-index: 10;
+  background: #1AA8AB;
+  color: #fff;
+  font: 1.4rem;
+  font-weight: 400;
+  text-align: center;
+  padding: 1rem 3rem;
+}
+.bottomDiv .imgCtn p{
+  margin-top: 2rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 780px) {
