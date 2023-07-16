@@ -229,6 +229,15 @@ header{
 .learning{
   background: #E8F2F2;
   padding: 9rem 8rem;
+  padding-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.learning > h2{
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
 }
 .topDiv{
   display: flex;
@@ -236,7 +245,7 @@ header{
   gap: 10rem;
 }
 .topDiv h2{
-  width: 40%;
+  width: 45%;
   font-size: 4rem;
   font-weight: 700;
   line-height: 1.6;
@@ -266,6 +275,21 @@ header{
   font-weight: 400;
   text-align: center;
   padding: 1rem 3rem;
+}
+.exploreBtn{
+  padding: 1rem 3rem;
+  background: #1AA8AB;
+  color: #fff;
+  width: fit-content;
+  margin: 5rem auto;
+
+  /* margin: 2rem auto;
+  background: #1AA8AB;
+  color: #fff;
+  font: 1.4rem;
+  font-weight: 400;
+  text-align: center;
+  padding: 1rem 3rem; */
 }
 .bottomDiv .imgCtn p{
   margin-top: 2rem;
