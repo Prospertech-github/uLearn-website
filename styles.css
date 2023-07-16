@@ -344,6 +344,65 @@ header{
 }
 
 
+/* FOOTER SECTION */
+footer{
+  background: #4D3F71;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding-top: 7rem;
+}
+.footerTopDiv{
+  padding: 0 10rem;
+  padding-bottom: 6rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.footerTopDiv .logo{
+  width: 12.4rem;
+  height: 2.8rem;
+}
+.footerDetails{
+  display: flex;
+  gap: 17rem;
+}
+.gridItems{
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.gridItems h3{
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.gridItems p{
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 100;
+}
+.footerSocials{
+  padding: 2.4rem 10rem;
+  /* padding-top: 2; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footerSocials p{
+  font-size: 1.6rem;
+  font-weight: 100;
+}
+.socials{
+  display: flex;
+  gap: .8rem;
+}
+.line{
+  height: 1px;
+  background: #fff;
+}
+
+
+
 /* MEDIA QUERIES */
 @media screen and (max-width: 780px) {
   .nav, .cta-reg.main{
