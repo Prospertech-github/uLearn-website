@@ -51,16 +51,21 @@ header{
 }
 .cta-reg{
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
 }
 .cta-reg a{
-  border: 2px solid;
-  padding: 1.4rem 5rem;
   outline: none;
+  width: 15rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .login{
+  border: 2px solid;
   color: #4D3F71;
-  border-color: #4D3F71;
 }
 .login:hover{
   color: #fff;
@@ -70,6 +75,7 @@ header{
 .signup{
   color: #fff;
   background: #1AA8AB;
+  border: 2px solid #1AA8AB;
 }
 .signup:hover{
   background: #fff;
@@ -216,7 +222,6 @@ header{
   width: 100%;
 }
 .programCtn .imgCtn h3{
-  /* margin-top: 2rem; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -253,7 +258,8 @@ header{
 .bottomDiv{
   margin-top: 5rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
   gap: 3rem;
 }
 .bottomDiv .imgCtn{
@@ -264,9 +270,13 @@ header{
   width: 100%;
   height: 100%;
 }
+.imgCtn{
+  position: relative;
+}
 .applyBtn{
   position: absolute;
-  bottom: 60px;
+  display: flex;
+  margin-top: -6rem;
   right: 10px;
   z-index: 10;
   background: #1AA8AB;
@@ -343,7 +353,8 @@ header{
 }
 .formControl input:focus, .formControl textarea:focus{
   outline: none;
-  
+  border:1px solid #1AA8AB; 
+ 
 }
 .formControl ::placeholder{
   font-family: 'Poppins', sans-serif;
@@ -378,10 +389,11 @@ footer{
 .footerTopDiv .logo{
   width: 12.4rem;
   height: 2.8rem;
+  padding: 0 15px;
 }
 .footerDetails{
   display: flex;
-  gap: 17rem;
+  gap: 16rem;
 }
 .gridItems{
   display: flex;
@@ -494,7 +506,7 @@ footer{
 }
 .authSubmit{
   width: fit-content;
-  padding: 2rem 6rem;
+  padding: 1rem 4rem;
   font-size: 1.8rem;
   font-weight: 100;
   color: #fff;
@@ -503,9 +515,228 @@ footer{
 }
 
 /* MEDIA QUERIES */
+@media screen and (max-width: 1160px) {
+  .textContainer{
+    background: #fff;
+    border-radius: 5px;
+    padding: 1.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.5rem;
+    font-weight: 100;
+    z-index: 10;
+  }
+  .bottomDetails{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    gap: 2rem;
+    font-size: 1.4rem;
+    flex-wrap: wrap;
+  }
+  .bottomDetails p:nth-child(3){
+    width: 100%;
+  }
+  .authForm{
+    width: 60%;
+    background: #fff;
+    padding: 4rem;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border: 1px solid #D3DEE8;
+    border-radius: 10px;
+    z-index: 10;
+  }
+}
+@media screen and (max-width: 1040px) {
+  .cta-reg{
+    gap: 2rem;
+  }
+  .cta-reg a{
+    width: 11rem;
+    height: 5rem;
+  }
+  .cont{
+    width: 100%;
+    height: 100%;
+    padding: 0 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .text-area{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
+  }
+  .bottomDiv{
+    align-items: flex-start;
+  }
+  .footerTopDiv{
+    padding: 0 10rem;
+    padding-bottom: 6rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .footerTopDiv .logo{
+    display: none;
+  }
+  .footerDetails{
+    gap: 14rem;
+  }
+  .gridItems{
+    gap: 1.2rem;
+  }
+  .applyBtn{
+    position: absolute;
+    display: flex;
+    margin-top: -5rem;
+    right: 10px;
+    z-index: 10;
+    font: 1.4rem;
+    font-weight: 400;
+    text-align: center;
+    padding: .5rem 2rem;
+  }
+
+  .authForm{
+    width: 65%;
+  }
+  .textContainer{
+    background: #fff;
+    border-radius: 5px;
+    padding: 1.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.5rem;
+    font-weight: 100;
+    z-index: 10;
+  }
+
+  .authSubmit{
+    font-size: 1.5rem;
+  }
+
+}
+@media screen and (max-width: 950px) {
+  .nav ul{
+    padding: 5px;
+  }
+  .nav ul li a{
+    font-size: 14px;
+  }
+  .ctn-logo{
+    padding: 5px;
+  }
+  .cta-reg a{
+    width: 10rem;
+    height: 4rem;
+  }
+  .text-area h1{
+    font-size: 5rem;
+  }
+  .program h2{
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+  .programCtn .imgCtn{
+    width: 30rem;
+    height: 30rem;
+  }
+  .bottomDiv{
+    align-items: flex-start;
+  }
+  .footerTopDiv{
+    padding: 0 10rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .footerTopDiv .logo{
+    display: none;
+  }
+  .footerDetails{
+    gap: 10rem;
+  }
+  .gridItems{
+    gap: 1rem;
+    width: 15rem;
+  }
+  .gridItems h3{
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  .gridItems p{
+    font-size: 1.5rem;
+    line-height: 1.4;
+    font-weight: 100;
+  }
+  .contactDiv .imgCtn{
+    display: none;
+  }
+  .formSubmit{
+    padding: 1.5rem 5rem;
+    font-size: 1.8rem;
+    font-weight: 100;
+  }
+  .learning .topDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+  }
+  .topDiv h2{
+    width: 100%;
+    text-align: center;
+  }
+  .applyBtn{
+    position: absolute;
+    display: flex;
+    margin-top: -4rem;
+    right: 10px;
+    z-index: 10;
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-align: center;
+    padding: .3rem 1.5rem;
+  }
+  .textContainer{
+    background: #fff;
+    border-radius: 5px;
+    padding: 1.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.5rem;
+    font-weight: 100;
+    z-index: 10;
+  }
+
+}
 @media screen and (max-width: 780px) {
   .nav, .cta-reg.main{
     display: none;
+  }
+  .cta-reg a{
+    width: 13rem;
+    height: 4rem;
+    font-size: 14px;
   }
   .toggle-btn{
     display: block;
@@ -519,7 +750,129 @@ footer{
   .dropdown-menu{
     display: block;
   }
+  .cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .heroSection{
+    height: 90vh;
+  }
+  .text-area{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .text-area h1{
+    font-size: 5rem;
+  }
+  .img-area{
+    display: none;
+  }
+  .program h2{
+    font-size: 2rem;
+    text-align: center;
+  }
+  .programCtn{
+    display: flex;
+    flex-direction: column;
+  }
+  .bottomDiv{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .footerTopDiv{
+    display: none;
+  }
+  .footerSocials{
+    padding: 2.4rem 3.5rem;
+  }
+  .contact{
+    padding: 6rem 3rem;
+  }
+  .textContainer{
+    background: #fff;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+    width: 90%;
+  }
 }
-@media screen and (max-width: 590px) {
+@media screen and (max-width: 580px) {
+  .bottomDiv{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .footerSocials{
+    padding: 2.4rem 2.5rem;
+  }
+  .contact{
+    padding: 6rem 2rem;
+  }
+  .formControl{
+    display: flex;
+    flex-direction: column;
+  }
+  .topContactDiv{
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+  }
+  .formSubmit{
+    padding: 1rem 4rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .authForm{
+    width: 90%;
+  }
+  .textContainer{
+    background: #fff;
+    font-size: 1.4rem;
+    width: 90%;
+  }
   
+}
+
+@media screen and (max-width: 480px) {
+  .cta-reg a{
+    width: 13rem;
+    height: 4rem;
+    font-size: 14px;
+  }
+  .text-area h1{
+    font-size: 5rem;
+  }
+  .text-area p{
+    font-size: 1.2rem;
+  }
+  .learning{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .learning > h2{
+    font-size: 2.5rem;
+    width: 100%;
+  }
+  .bottomDiv{
+    flex-direction: column;
+    align-items: center;
+  }
+  .exploreBtn{
+    font-size: 14px;
+  }
+  .bottomDiv .imgCtn p{
+    font-size: 1.4rem;
+  }
+  .footerSocials{
+    padding: 2.4rem 1.5rem;
+  }
 }
