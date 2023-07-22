@@ -127,6 +127,10 @@ header{
   justify-content: center;
   margin-top: 3rem;
 }
+.greeting{
+  font-size: 2rem;
+  font-weight: 500;
+}
 
 
 
