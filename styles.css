@@ -14,6 +14,17 @@ body{
   line-height: 1.5;
   color: #000;
 }
+body::-webkit-scrollbar {
+  width: 0.5em; 
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #1AA8AB; 
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #f1f1f1; 
+}
 ul{
   list-style: none;
 }
@@ -518,6 +529,110 @@ footer{
   border: none;
 }
 
+/* APPLY PAGE */
+.apply{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  background: #E8F2F2;
+}
+.apply h2{
+  font-size:40px;
+  width: 80%;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.apply .topDiv{
+  background-image: url(/uLearn-website/images/uxuiImage.png);
+  background-size: cover;
+  width: 76%;
+  height: 60rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.playIcon{
+  width: 20rem;
+  display: flex;
+  align-self: center;
+  height: 20rem;
+}
+.payment{
+  display: flex;
+  width: 76%;
+  margin-top: 3rem;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.payment .top{
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  width: 40%;
+  border: 1px solid #D3DEE8;
+  padding: 20px;
+  gap: 1.5rem;
+}
+.top h3{
+  font-size: 16px;
+  font-weight: 600;
+}
+.top span{
+  font-weight: 400;
+  margin-left: .5rem;
+}
+.courses{
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+.courses img {
+  width: 6rem;
+}
+.bottom{
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  justify-self: right;
+  width: 35%;
+}
+.bottom .money{
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  border: 1px solid #D3DEE8;
+  padding: 20px;
+  margin-bottom: .5rem;
+}
+.money h2{
+  display: flex;
+  text-align: left;
+  margin-top: 1rem;
+}
+.money p{
+  background-color: #1AA8AB;
+  display: flex;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #1AA8AB;
+}
+.bottom h6{
+  color: #000000;
+  font-size: 8px;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+.bottom p{
+  font-weight: 700;
+}
+
 /* MEDIA QUERIES */
 @media screen and (max-width: 1160px) {
   .textContainer{
@@ -557,6 +672,15 @@ footer{
     border: 1px solid #D3DEE8;
     border-radius: 10px;
     z-index: 10;
+  }
+  .top h3{
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .top span{
+    font-weight: 400;
+    margin-left: .5rem;
+    font-size: 14px;
   }
 }
 @media screen and (max-width: 1040px) {
@@ -630,9 +754,15 @@ footer{
     font-weight: 100;
     z-index: 10;
   }
-
   .authSubmit{
     font-size: 1.5rem;
+  }
+  .apply .topDiv{
+    height: 50rem;
+  }  
+  .playIcon{
+    width: 15rem;
+    height: 15rem;
   }
 
 }
@@ -731,6 +861,19 @@ footer{
     font-weight: 100;
     z-index: 10;
   }
+  .payment .top{
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    width: 50%;
+    border: 1px solid #D3DEE8;
+    padding: 20px;
+    gap: 1.5rem;
+  }
+  .playIcon{
+    width: 13rem;
+    height: 13rem;
+  }
 
 }
 @media screen and (max-width: 780px) {
@@ -807,6 +950,12 @@ footer{
     font-size: 1.5rem;
     width: 90%;
   }
+  .money h2{
+    font-size: 25px;
+  }
+  .courses img {
+    width: 4rem;
+  }
 }
 @media screen and (max-width: 580px) {
   .bottomDiv{
@@ -841,6 +990,71 @@ footer{
     background: #fff;
     font-size: 1.4rem;
     width: 90%;
+  }
+  .payment{
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .payment .top{
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    width: 100%;
+    border: 1px solid #D3DEE8;
+    padding: 20px;
+    gap: 1.5rem;
+  }
+  .top h3{
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .top span{
+    font-weight: 400;
+    margin-left: .5rem;
+  }
+  .courses{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+  }
+  .courses img {
+    width: 6rem;
+  }
+  .bottom{
+    width: 100%;
+  }
+  .bottom .money{
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border: 1px solid #D3DEE8;
+    padding: 20px;
+    margin-bottom: .5rem;
+  }
+  .money h2{
+    display: flex;
+    text-align: left;
+    margin-top: 1rem;
+  }
+  .money p{
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #1AA8AB;
+  }
+  .bottom h6{
+    color: #000000;
+    font-size: 8px;
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+  .bottom p{
+    font-weight: 700;
   }
   
 }
@@ -879,4 +1093,18 @@ footer{
   .footerSocials{
     padding: 2.4rem 1.5rem;
   }
+  .apply h2{
+    font-size: 18px;
+  }
+  .courses img {
+    width: 4rem;
+  }
+  .apply .topDiv{
+    width: 76%;
+    height: 20rem;
+  }
+.playIcon{
+  width: 8rem;
+  height: 8rem;
+}
 }
