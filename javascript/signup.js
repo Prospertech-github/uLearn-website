@@ -6,8 +6,11 @@ const password = document.querySelector('#password');
 signUpForm.addEventListener('submit', e => {
 	e.preventDefault();
 
-	if (email.value.includes('@') && password.value.length >= 8) {
-
+	if (
+		fullName.value.length >= 3 &&
+		email.value.includes('@') &&
+		password.value.length >= 8
+	) {
 		fetch('http://localhost/ulearn/register.php', {
 			method: 'POST',
 			body: JSON.stringify({
@@ -22,11 +25,15 @@ signUpForm.addEventListener('submit', e => {
 			.then(response => {
 				if ((response.status = 200)) {
 					alert(
-						'Welcome!! You have successfully signed up to ULEARN'
+						'Welcome!! You have successfully signed up to ULEARN 👍🏾👍🏾 \n Please login to access the courses ☺☺'
 					);
-					window.location.href = 'login.html'
+					window.location.href = 'login.html';
 				}
 			})
 			.catch(error => console.error(error.message));
+	} else {
+		alert(
+			`OOPS!! 😞😞 Check your inputs \nHint: \n**Name must be at least 3 characters long \n**Email must be of a valid email format \n**Password must be atleast 8 characters long`
+		);
 	}
 });

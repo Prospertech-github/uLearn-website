@@ -240,11 +240,35 @@
 	}
 }
 @media screen and (max-width: 780px) {
+	.greeting{
+		font-size: 1.6rem;
+		font-weight: 600;
+	}
+	.greetingDivMain{
+		display: none;
+	}
+	.greetingDivMobile{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 2rem;
+		gap: 2rem;
+		color: #fff;
+	}
+	.greetingDivMobile .reg-btn{
+		color: #4d3f71;
+		background: #1aa8ab;
+		border: 2px solid #4d3f71;
+	}
+	.reg-btn:hover{
+		background: #4d3f71;
+		color: #fff;
+	}
 	.nav,
 	.cta-reg.main {
 		display: none;
 	}
-	.cta-reg a {
+	.cta-reg a, .reg-btn {
 		width: 13rem;
 		height: 4rem;
 		font-size: 14px;
