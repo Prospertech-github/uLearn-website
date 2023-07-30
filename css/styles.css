@@ -141,6 +141,43 @@ nav li a:active {
 	gap: 3rem;
 }
 
+/* SEARCH SECTION */
+.searchSection{
+	background: #1aa8ab;
+	height: 6rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.searchForm{
+	display: flex;
+	gap: 1.5rem;
+}
+#search{
+	width: 30rem;
+	border: none;
+	border-radius: 5px;
+	padding: 1rem 1rem;
+	font-size: 1.5rem;
+	background-color: #fff;
+}
+#search:focus, .searchBtn:focus{
+	border: none;
+	outline: none;
+}
+
+.searchBtn{
+	border: 1.5px solid #4d3f71;
+	padding: 1rem;
+	font-size: 1.6rem;
+	font-weight: 600;
+	border-radius: 5px;
+	background-color: #fff;
+	color: #4d3f71;
+	cursor: pointer;
+}
+
+
 /* SECTION AREA */
 .heroSection {
 	position: relative;
