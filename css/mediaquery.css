@@ -344,6 +344,23 @@
 	.courses img {
 		width: 4rem;
 	}
+	.about {
+		flex-direction: column;
+		gap: 5rem;
+		padding: 5rem 2rem;
+	}
+	.sectionImage {
+		width: 450px;
+		height: 420px;
+		margin: 0 auto;
+	}
+	.sectionImage img {
+		height: 100%;
+		width: 100%;
+	}
+	.sectionText h2 {
+		font-size: 3rem;
+	}
 }
 @media screen and (max-width: 580px) {
 	.bottomDiv {
@@ -443,6 +460,20 @@
 	}
 	.bottom p {
 		font-weight: 700;
+	}
+	.sectionImage {
+		width: 250px;
+		height: 250px;
+	}
+	.sectionImage img {
+		height: 100%;
+		width: 100%;
+	}
+	.sectionText h2 {
+		font-size: 3.5rem;
+	}
+	.sectionText p{
+		font-size: 1.8rem;
 	}
 }
 

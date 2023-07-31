@@ -1,0 +1,150 @@
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/mediaquery.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title> ULearn: Skill acquisition at ease </title>
+</head>
+
+<body>
+  <header>
+    <div class="ctn-logo">
+      <img src="images/logo.png" alt="ULearn Logo">
+    </div>
+
+    <nav class="nav">
+      <ul>
+        <li> <a href="index.html"> Home </a> </li>
+        <li> <a href="about.html"> About </a> </li>
+        <li> <a href="learning.html"> Learning </a> </li>
+        <li> <a href="reviews.html"> Reviews </a> </li>
+        <li> <a href="contact.html"> Contact </a> </li>
+      </ul>
+    </nav>
+    <div class="greetingDivMain">
+      <button class="reg-btn logout"> Logout </button>
+    </div>
+
+    <div class="cta-reg main">
+      <a href="login.html" class="reg-btn login"> Login </a>
+      <a href="signup.html" class="reg-btn signup"> Sign Up </a>
+    </div>
+
+    <div class="toggle-btn">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="dropdown-menu">
+      <ul>
+        <li> <a href="index.html"> Home </a> </li>
+        <li> <a href="about.html"> About </a> </li>
+        <li> <a href="learning.html"> Learning </a> </li>
+        <li> <a href="reviews.html"> Reviews </a> </li>
+        <li> <a href="contact.html"> Contact </a> </li>
+      </ul>
+
+      <div class="cta-reg mobile-reg">
+        <a href="login.html" class="reg-btn login"> Login </a>
+        <a href="signup.html" class="reg-btn signup"> Sign Up </a>
+      </div>
+      <div class="greetingDivMobile">
+        <button class="reg-btn logout" id="mobile-logout"> Logout </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="searchSection">
+    <form action="" method="get" class="searchForm">
+      <input type="text" name="search" id="search" autocomplete="off">
+      <button type="submit" class="searchBtn"> Search </button>
+    </form>
+  </div>
+
+  <section class="about">
+    <div class="sectionImage">
+      <img src="images/physical.png" alt="">
+    </div>
+    <div class="sectionText">
+      <h2> Welcome To ULearn </h2>
+      <p>
+        At <span class="special"> ULearn </span>, we believe that learning should be accessible, flexible, and tailored to your needs. We are an innovative
+        online learning platform that empowers individuals to enhance their tech skills at their own pace and convenience.
+        Whether you're a beginner looking to explore the world of technology or an experienced professional aiming to stay ahead
+        in your field, ULearn provides the tools and resources you need to succeed
+      </p>
+  
+      <p>
+        Join <span class="special"> ULearn </span> today and embark on an exciting learning journey that will empower you to reach new heights in your tech
+        career. Our mission is to make learning accessible, enjoyable, and transformative. Start your learning adventure with
+        ULearn and unlock endless possibilities in the world of technology.
+      </p>
+
+      <p>
+        Why ULearn?
+        <ul>
+          <li> Convenience and Flexibility</li>
+          <li> Expert Instructors </li>
+          <li> Engaging Learning Experience </li>
+          <li> Diverse Range of Courses </li>
+        </ul>
+      </p>
+    </div>
+  </section>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footerTopDiv">
+      <div class="logo">
+        <img src="images/footerLogo.png" alt="ULearn Logo">
+      </div>
+
+      <div class="footerDetails">
+        <div class="gridItems">
+          <h3> Top Programs </h3>
+          <p> Visual Design </p>
+          <p> Web Design </p>
+          <p> Robotics </p>
+        </div>
+        <div class="gridItems">
+          <h3> Contact </h3>
+          <p> Email </p>
+          <p> Phone Number </p>
+        </div>
+        <div class="gridItems">
+          <h3> Policies </h3>
+          <p> Terms and Conditions </p>
+          <p> Refund Policy </p>
+          <p> Privacy Policy </p>
+        </div>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="footerBottomDiv">
+      <div class="footerSocials">
+        <p> &copy; Ulearn 2023</p>
+
+        <div class="socials">
+          <img src="images/emailIcon.svg" alt="Ulearn Email">
+          <img src="images/linkedinIcon.svg" alt="Ulearn LinkedIn">
+          <img src="images/youtubeIcon.svg" alt="Ulearn YouTube">
+          <img src="images/twitterIcon.svg" alt="Ulearn Twitter">
+          <img src="images/facebookIcon.svg" alt="Ulearn Facebook">
+          <img src="images/instagramIcon.svg" alt="Ulearn Instagram">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="javascript/script.js"></script>
+</body>
+
+</html>
