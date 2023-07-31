@@ -25,7 +25,7 @@
       </ul>
     </nav>
     <div class="greetingDivMain">
-      <a href="#" class="reg-btn logout"> Logout </a>
+      <button class="reg-btn logout"> Logout </button>
     </div>
 
     <div class="cta-reg main"> 
@@ -51,18 +51,18 @@
         <a href="signup.html" class="reg-btn signup"> Sign Up </a>
       </div>
       <div class="greetingDivMobile">
-        <a href="#" class="reg-btn logout" id="mobile-logout"> Logout </a>
+        <button class="reg-btn logout" id="mobile-logout"> Logout </button>
       </div>
     </div>
   </header>
 
   <div class="searchSection">
     <form action="" method="get" class="searchForm">
-      <input type="text" name="search" id="search">
+      <input type="text" name="search" id="search" autocomplete="off">
       <button type="submit" class="searchBtn"> Search </button>
     </form>
   </div>
-  
+
   <section class="heroSection">
     <div class="cont">
       <div class="text-area">
@@ -119,9 +119,14 @@
         <p> Introduction to Robotics</p>
       </div>
     </div>
-    <!-- <h2> Hello World </h2> -->
     <a href="learning.html" class="exploreBtn"> Explore Courses </a>
   </section>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+    </div>
+  </div>
 
   <footer class="footer">
     <div class="footerTopDiv">
