@@ -72,7 +72,8 @@
 		gap: 3rem;
 		text-align: center;
 	}
-	.bottomDiv {
+	.coursesContainer,
+	.bottomDiv{
 		align-items: flex-start;
 	}
 	.footerTopDiv {
@@ -125,7 +126,7 @@
 	.apply .topDiv {
 		height: 50rem;
 	}
-	.playIcon {
+	.courseImage {
 		width: 15rem;
 		height: 15rem;
 	}
@@ -155,7 +156,7 @@
 		width: 30rem;
 		height: 30rem;
 	}
-	.bottomDiv {
+	.coursesContainer, .bottomDiv {
 		align-items: flex-start;
 	}
 	.footerTopDiv {
@@ -234,7 +235,7 @@
 		padding: 20px;
 		gap: 1.5rem;
 	}
-	.playIcon {
+	.courseImage {
 		width: 13rem;
 		height: 13rem;
 	}
@@ -316,7 +317,7 @@
 		display: flex;
 		flex-direction: column;
 	}
-	.bottomDiv {
+	.coursesContainer, .bottomDiv {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
@@ -363,7 +364,7 @@
 	}
 }
 @media screen and (max-width: 580px) {
-	.bottomDiv {
+	.coursesContainer, .bottomDiv {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
@@ -442,7 +443,7 @@
 		text-align: left;
 		margin-top: 1rem;
 	}
-	.money p {
+	.money button {
 		display: flex;
 		width: 100%;
 		text-align: center;
@@ -498,13 +499,14 @@
 		font-size: 2.5rem;
 		width: 100%;
 	}
-	.bottomDiv {
+	.coursesContainer, .bottomDiv{
 		flex-direction: column;
 		align-items: center;
 	}
 	.exploreBtn {
 		font-size: 14px;
 	}
+	.coursesContainer .imgCtn p,
 	.bottomDiv .imgCtn p {
 		font-size: 1.4rem;
 	}
@@ -521,7 +523,7 @@
 		width: 76%;
 		height: 20rem;
 	}
-	.playIcon {
+	.courseImage {
 		width: 8rem;
 		height: 8rem;
 	}
