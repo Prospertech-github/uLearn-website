@@ -13,6 +13,9 @@ const searchInput = document.getElementById('search');
 const modal = document.getElementById('myModal');
 const closeBtn = document.querySelector('.close');
 
+let courses = [];
+let selectedCourse;
+
 toggleBtn.addEventListener('click', () => {
 	dropDown.classList.toggle('open');
 	const isOpen = dropDown.classList.contains('open');
@@ -47,7 +50,9 @@ mobileLogout.addEventListener('click', handleLogOut);
 function handleLogOut() {
 	localStorage.removeItem('userToken');
 	localStorage.removeItem('loggedInUser');
-	location.reload();
+	localStorage.removeItem('selectedCourse');
+	// location.reload();
+	window.location.href = 'index.html';
 }
 
 // Handle Search Functonality
@@ -56,21 +61,22 @@ searchForm.addEventListener('submit', e => {
 	const query = searchInput.value;
 
 	if (query) {
-		console.log('Searching .....');
 		fetch(`http://localhost/ulearn/search.php?q=${query}`)
 			.then(response => response.json())
 			.then(data => {
-				console.log(data);
 				modal.style.display = 'block';
 
 				const modalContent = document.querySelector('.modal-content');
-				console.log(modalContent);
 				const courseList = document.createElement('div');
 				courseList.classList.add('courseList');
 				modalContent.appendChild(courseList);
 				if (data.length > 0) {
-					console.log('Found Something');
-					console.log(data)
+					courseList.insertAdjacentHTML(
+						'afterbegin',
+						`
+						<p> **Search results are based on your input </p>
+					`
+					);
 					data.forEach(course => {
 						courseList.insertAdjacentHTML(
 							'beforeend',
@@ -78,23 +84,26 @@ searchForm.addEventListener('submit', e => {
 							<p class='courseResult'> ${course.course_name}</p>
 						`
 						);
-						const courseResult = document.getElementsByClassName('courseResult');
+						const courseResult =
+							document.getElementsByClassName('courseResult');
 						const courseArray = Array.from(courseResult);
-						courseArray.map((course,index) => {
-							course.setAttribute('id', `${index+1}`)
-						})
-						console.log(courseResult);
+						courseArray.map((course, index) => {
+							course.setAttribute('id', `${index + 1}`);
+						});
 						searchInput.value = '';
 					});
 				} else {
 					courseList.insertAdjacentHTML(
 						'beforeend',
 						`
-						<p> Sorry, we don't have any course related to your search </p>
+						<p> **Course(s) displayed are course(s) related to search input </p>
+						<p> Sorry, we don't have any course related to your search.</p>
+						<p> We would consider adding that course to our library.</p>
 					`
 					);
 					searchInput.value = '';
 				}
+				searchInput.blur();
 			})
 			.catch(error => console.error(error));
 	}
@@ -110,7 +119,7 @@ const closeModal = () => {
 closeBtn.onclick = function () {
 	closeModal();
 };
-// When the user clicks anywhere outside of the modal, close it
+// // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
 	if (event.target == modal) {
 		closeModal();
@@ -123,28 +132,93 @@ const restrictUserAccess = function () {
 	const applyBtnsArray = Array.from(applyBtns);
 
 	if (localStorage.getItem('loggedInUser') == null) {
-		console.log('loggedOut');
-
 		applyBtnsArray.map(applyBtn => {
 			applyBtn.getAttribute('href');
 			applyBtn.setAttribute('href', '#');
+			applyBtn.addEventListener('click', () => {
+				alert(
+					'WAIT✋🏾✋🏾!! Users are expected to Login or Sign Up before applying for courses'
+				);
+				window.location.href = 'signup.html';
+			});
 		});
 	} else {
 		applyBtnsArray.map(applyBtn => {
-			console.log('loggedIn');
 			applyBtn.getAttribute('href');
-			applyBtn.setAttribute('href', 'apply.html');
+			applyBtn.setAttribute('href', 'courseDetail.html');
 		});
 	}
 };
-restrictUserAccess();
 
+(async function () {
+	const response = await fetch('http://localhost/ulearn/courses.php');
+	const data = await response.json();
+	courses.push(...data);
 
+	// Display Courses in Learning Page
+	const coursesContainer = document.querySelector('.coursesContainer');
+	if (courses.length > 0) {
+		courses.map((course, index) => {
+			coursesContainer.insertAdjacentHTML(
+				'beforeend',
+				`
+				<div class="imgCtn">
+					<img src="${course.course_image}" alt="">
+					<a href="#" class="applyBtn" id="${course.id}"> Apply </a>
+					<p> ${course.course_name} </p>
+				</div>
+			`
+			);
+		});
+		//Check user authentication and restrict access
+		restrictUserAccess();
 
-// const fetchCourses = async function () {
-// 	const response = await fetch('http://localhost/ulearn/courses.php');
-// 	const data = await response.json();
+		// Insert Event Listeners into Buttons
+		const btns = document.getElementsByClassName('applyBtn');
+		const btnArray = Array.from(btns);
+		btnArray.map(btn => {
+			btn.addEventListener('click', function (e) {
+				selectedCourse = courses[e.target.id - 1];
+				// Save Selected course to Local storage
+				localStorage.setItem(
+					'selectedCourse',
+					JSON.stringify(selectedCourse)
+				);
+			});
+		});
+	}
+})();
 
-// 	console.log(data);
-// };
-// fetchCourses();
+// Dynamically Change Course Detail Page
+try {
+	if (localStorage.getItem('selectedCourse') !== null) {
+		const data = JSON.parse(localStorage.getItem('selectedCourse'));
+		const courseName = document.querySelector('#courseName');
+		courseName.textContent = data.course_name;
+		const courseImage = document.querySelector('.courseImage');
+		courseImage.src = data.course_image;
+	}
+} catch (error) {
+	console.error(error);
+}
+
+const btnApply = document.querySelector('#btnApply');
+btnApply.addEventListener('click', () => {
+	const courseId = JSON.parse(localStorage.getItem('selectedCourse')).id;
+	const token = localStorage.getItem('userToken');
+
+	fetch('http://localhost/ulearn/apply.php', {
+		method: 'POST',
+		body: JSON.stringify({
+			course_id: courseId,
+		}),
+		headers: {
+			'Content-type': 'application/json; charset=UTF-8',
+			Authorization: `Bearer ${token}`,
+		},
+	})
+		.then(response => response.json())
+		.then(data => alert(data.message))
+		.catch(error => console.error(error));
+});
+

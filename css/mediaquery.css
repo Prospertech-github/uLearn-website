@@ -72,7 +72,8 @@
 		gap: 3rem;
 		text-align: center;
 	}
-	.bottomDiv {
+	.coursesContainer,
+	.bottomDiv{
 		align-items: flex-start;
 	}
 	.footerTopDiv {
@@ -125,7 +126,7 @@
 	.apply .topDiv {
 		height: 50rem;
 	}
-	.playIcon {
+	.courseImage {
 		width: 15rem;
 		height: 15rem;
 	}
@@ -155,7 +156,7 @@
 		width: 30rem;
 		height: 30rem;
 	}
-	.bottomDiv {
+	.coursesContainer, .bottomDiv {
 		align-items: flex-start;
 	}
 	.footerTopDiv {
@@ -234,7 +235,7 @@
 		padding: 20px;
 		gap: 1.5rem;
 	}
-	.playIcon {
+	.courseImage {
 		width: 13rem;
 		height: 13rem;
 	}
@@ -316,7 +317,7 @@
 		display: flex;
 		flex-direction: column;
 	}
-	.bottomDiv {
+	.coursesContainer, .bottomDiv {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
@@ -344,9 +345,26 @@
 	.courses img {
 		width: 4rem;
 	}
+	.about {
+		flex-direction: column;
+		gap: 5rem;
+		padding: 5rem 2rem;
+	}
+	.sectionImage {
+		width: 450px;
+		height: 420px;
+		margin: 0 auto;
+	}
+	.sectionImage img {
+		height: 100%;
+		width: 100%;
+	}
+	.sectionText h2 {
+		font-size: 3rem;
+	}
 }
 @media screen and (max-width: 580px) {
-	.bottomDiv {
+	.coursesContainer, .bottomDiv {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
@@ -425,7 +443,7 @@
 		text-align: left;
 		margin-top: 1rem;
 	}
-	.money p {
+	.money button {
 		display: flex;
 		width: 100%;
 		text-align: center;
@@ -443,6 +461,20 @@
 	}
 	.bottom p {
 		font-weight: 700;
+	}
+	.sectionImage {
+		width: 250px;
+		height: 250px;
+	}
+	.sectionImage img {
+		height: 100%;
+		width: 100%;
+	}
+	.sectionText h2 {
+		font-size: 3.5rem;
+	}
+	.sectionText p{
+		font-size: 1.8rem;
 	}
 }
 
@@ -467,13 +499,14 @@
 		font-size: 2.5rem;
 		width: 100%;
 	}
-	.bottomDiv {
+	.coursesContainer, .bottomDiv{
 		flex-direction: column;
 		align-items: center;
 	}
 	.exploreBtn {
 		font-size: 14px;
 	}
+	.coursesContainer .imgCtn p,
 	.bottomDiv .imgCtn p {
 		font-size: 1.4rem;
 	}
@@ -490,7 +523,7 @@
 		width: 76%;
 		height: 20rem;
 	}
-	.playIcon {
+	.courseImage {
 		width: 8rem;
 		height: 8rem;
 	}
