@@ -50,8 +50,9 @@ mobileLogout.addEventListener('click', handleLogOut);
 function handleLogOut() {
 	localStorage.removeItem('userToken');
 	localStorage.removeItem('loggedInUser');
+	localStorage.removeItem('selectedCourse');
 	// location.reload();
-	window.location.href = 'index.html'
+	window.location.href = 'index.html';
 }
 
 // Handle Search Functonality
@@ -60,21 +61,16 @@ searchForm.addEventListener('submit', e => {
 	const query = searchInput.value;
 
 	if (query) {
-		console.log('Searching .....');
 		fetch(`http://localhost/ulearn/search.php?q=${query}`)
 			.then(response => response.json())
 			.then(data => {
-				console.log(data);
 				modal.style.display = 'block';
 
 				const modalContent = document.querySelector('.modal-content');
-				console.log(modalContent);
 				const courseList = document.createElement('div');
 				courseList.classList.add('courseList');
 				modalContent.appendChild(courseList);
 				if (data.length > 0) {
-					console.log('Found Something');
-					console.log(data);
 					courseList.insertAdjacentHTML(
 						'afterbegin',
 						`
@@ -94,7 +90,6 @@ searchForm.addEventListener('submit', e => {
 						courseArray.map((course, index) => {
 							course.setAttribute('id', `${index + 1}`);
 						});
-						console.log(courseResult);
 						searchInput.value = '';
 					});
 				} else {
@@ -155,12 +150,10 @@ const restrictUserAccess = function () {
 	}
 };
 
-
 (async function () {
 	const response = await fetch('http://localhost/ulearn/courses.php');
 	const data = await response.json();
 	courses.push(...data);
-
 
 	// Display Courses in Learning Page
 	const coursesContainer = document.querySelector('.coursesContainer');
@@ -176,7 +169,6 @@ const restrictUserAccess = function () {
 				</div>
 			`
 			);
-
 		});
 		//Check user authentication and restrict access
 		restrictUserAccess();
@@ -186,26 +178,47 @@ const restrictUserAccess = function () {
 		const btnArray = Array.from(btns);
 		btnArray.map(btn => {
 			btn.addEventListener('click', function (e) {
-				selectedCourse=(courses[e.target.id - 1]);
+				selectedCourse = courses[e.target.id - 1];
 				// Save Selected course to Local storage
-				localStorage.setItem('selectedCourse', JSON.stringify(selectedCourse));
+				localStorage.setItem(
+					'selectedCourse',
+					JSON.stringify(selectedCourse)
+				);
 			});
 		});
 	}
 })();
 
-
-// Dynamically Change Course Detail Page 
+// Dynamically Change Course Detail Page
 try {
 	if (localStorage.getItem('selectedCourse') !== null) {
 		const data = JSON.parse(localStorage.getItem('selectedCourse'));
-		console.log(data)
 		const courseName = document.querySelector('#courseName');
-		courseName.textContent = data.course_name
-		console.log(courseName.textContent);
+		courseName.textContent = data.course_name;
 		const courseImage = document.querySelector('.courseImage');
 		courseImage.src = data.course_image;
 	}
-} catch(error) {
-	console.error(error)
+} catch (error) {
+	console.error(error);
 }
+
+const btnApply = document.querySelector('#btnApply');
+btnApply.addEventListener('click', () => {
+	const courseId = JSON.parse(localStorage.getItem('selectedCourse')).id;
+	const token = localStorage.getItem('userToken');
+
+	fetch('http://localhost/ulearn/apply.php', {
+		method: 'POST',
+		body: JSON.stringify({
+			course_id: courseId,
+		}),
+		headers: {
+			'Content-type': 'application/json; charset=UTF-8',
+			Authorization: `Bearer ${token}`,
+		},
+	})
+		.then(response => response.json())
+		.then(data => alert(data.message))
+		.catch(error => console.error(error));
+});
+

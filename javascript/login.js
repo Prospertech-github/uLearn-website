@@ -2,8 +2,10 @@ const loginForm = document.getElementById('loginForm');
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');
 
+//Declaring user token variable
 let token;
 
+//Handling Login Functionality and saving userToken
 loginForm.addEventListener('submit', e => {
 	e.preventDefault();
 
