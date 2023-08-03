@@ -826,3 +826,33 @@ footer {
 	font-weight: 600;
 	font-size: 2rem;
 }
+
+/* REVIEWS SECTION */
+.reviewSection{
+	padding: 0 10rem 15rem;
+}
+.reviewSection h2{
+	font-size: 3rem;
+	text-align: center;
+}
+.reviewsContainerDiv{
+	display: flex;
+	justify-content: space-between;
+	gap: 5rem;
+	padding: 5rem 0;
+}
+.review{
+	background: #1aa8ab;
+	color: #fff;
+	font-size: 1.6rem;
+	border-radius: 10px;
+	padding: 2rem 1rem ;
+	width: 50%;
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+}
+.starRating{
+	align-self: flex-end;
+}
