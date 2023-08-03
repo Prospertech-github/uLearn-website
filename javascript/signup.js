@@ -3,6 +3,13 @@ const email = document.querySelector('#email');
 const fullName = document.querySelector('#name');
 const password = document.querySelector('#password');
 
+const object = {
+	name: 'Hello'
+}
+const JSONobj = {
+	'name': 'Hello'
+}
+
 signUpForm.addEventListener('submit', e => {
 	e.preventDefault();
 
