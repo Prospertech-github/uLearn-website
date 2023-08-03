@@ -60,7 +60,7 @@
 
 
   <div class="searchSection">
-    <form action="" method="get" class="searchForm">
+    <form method="get" class="searchForm">
       <input type="text" name="search" id="search" autocomplete="off">
       <button type="submit" class="searchBtn"> Search </button>
     </form>
@@ -78,8 +78,8 @@
       </div>
       <div class="bottom">
         <div class="money">
-          <h2>**FREE</h2>
-          <button id="btnApply"> APPLY </button>
+          <h2>$200</h2>
+          <button id="btnApply"> PAY </button>
         </div>
         <h6>*By clicking the payment button, it means you have agreed to the refund policy</h6>
         <p>You will get access to online live classes with
@@ -93,6 +93,20 @@
       <span class="close">&times;</span>
     </div>
   </div>
+
+  <div id="paymentModal" class="modal">
+    <div class="paymentModal-content">
+      <span class="paymentClose">&times;</span>
+      <form class="payment">
+        <div class="cardDetails">
+          <label for="cardNumber"> Card Number </label>
+          <input type="text" name="cardNumber" id="cardNumber" placeholder="E.g: XXXX XXXX XXXX">
+        </div>
+        <button id="payBtn"> PAY </button>
+      </form>
+    </div>
+  </div>
+
 
   <footer class="footer">
     <div class="footerTopDiv">

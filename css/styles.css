@@ -181,7 +181,7 @@ nav li a:active {
 	color: #fff;
 	cursor: pointer;
 }
-.modal {
+.modal, #paymentModal {
   display: none; 
   position: fixed;
   z-index: 40;
@@ -193,7 +193,8 @@ nav li a:active {
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
 }
-.modal-content {
+.modal-content,
+.paymentModal-content {
   background-color: #1aa8ab;
 	color: #fff;
   margin: 15% auto;
@@ -229,14 +230,49 @@ nav li a:active {
 	background: #4d3f71;
 	color: #fff;
 }
-.close {
+.close, .paymentClose {
   color: #d60000;
 	font-size: 4rem;
   font-weight: 700;
 	cursor: pointer;
 }
-
-
+.paymentModal-content .payment{
+	/* border: 2px solid; */
+	font-size: 1.6rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+.cardDetails{
+	/* border: 2px solid red; */
+	display: flex;
+	flex-direction: column;
+	width: 70%;
+}
+.cardDetails input{
+	padding: 1rem;
+	font-size: 1.5rem;
+	border: none;
+	border-radius: 5px;
+	outline: none;
+}
+.cardDetails input::placeholder{
+	font-family: 'Poppins', sans-serif;
+	font-size: 1.5rem;
+}
+#payBtn{
+	width: fit-content;
+	padding: 1rem 2rem;
+	background: #4d3f71;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	font-size: 1.5rem;
+	font-weight: 600;
+	letter-spacing: .2rem;
+	cursor: pointer;
+}
+	
 /* SECTION AREA */
 .heroSection {
 	position: relative;
