@@ -22,15 +22,21 @@ loginForm.addEventListener('submit', e => {
 		})
 			.then(response => response.json())
 			.then(data => {
-				localStorage.setItem('userToken', data.token);
-				token = data.token;
+				if (data.token == null) {
+					alert(data.message)
+				}
+				if(data.token){
+					alert(data.token);
+					localStorage.setItem('userToken', data.token);
+					token = data.token
 
-				return fetch('http://localhost/ulearn/user.php', {
-					headers: {
-						'Content-type': 'application/json; charset=UTF-8',
-						Authorization: `Bearer ${token}`,
-					},
-				});
+					return fetch('http://localhost/ulearn/user.php', {
+						headers: {
+							'Content-type': 'application/json; charset=UTF-8',
+							Authorization: `Bearer ${token}`,
+						},
+					});
+				}
 			})
 			.then(info => info.json())
       .then(userDetails => {
