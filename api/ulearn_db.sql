@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jul 21, 2023 at 11:48 AM
+-- Generation Time: Aug 04, 2023 at 12:32 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.12
 
@@ -57,6 +57,27 @@ CREATE TABLE `course_user` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `reviews`
+--
+
+CREATE TABLE `reviews` (
+  `id` int(11) NOT NULL,
+  `name` varchar(225) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(225) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subject` varchar(225) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `comment` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`id`, `name`, `email`, `subject`, `comment`) VALUES
+(1, 'Test user 2', 'testing@testing.com', 'This is a text subject', 'This is a test review comment for ULearn');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -84,6 +105,12 @@ ALTER TABLE `course_user`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `reviews`
+--
+ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -105,6 +132,12 @@ ALTER TABLE `courses`
 --
 ALTER TABLE `course_user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `reviews`
+--
+ALTER TABLE `reviews`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
